@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>PIZZARIA! MAMMA MIA!</h1>
+  <hr>
+  <p>
+    Utilizando formularios vamos criar uma lista com objetos, o formulario irá dar como resultado um objeto do tipo {key: value} representando uma pizza e seus atributos
+    <code>
+      <pre>
+    {
+      sabor: ''
+      borda: ''
+      hora_da_entrega_preferida: ''
+      tamanho: ''
+    }
+      </pre>
+    </code> 
+  </p>
+  <hr>
+
+  <form action="">
+    <fieldset>
+      <legend>Pizza</legend>
+      <fieldset id="algumacoisa">
+        <legend> Sabor </legend>
+        <label for=""> <input type="radio" name="sab" value="muss" required> Mussarela </label>
+        <label for=""> <input type="radio" name="sab" value="frango"> Frango com catupiry </label>
+        <label for=""> <input type="radio" name="sab" value="queijo"> Queijo </label>
+        <label for=""> <input type="radio" name="sab" value="casa"> A moda da casa </label>
+      </fieldset>
+
+      <fieldset>
+        <legend> Tamanho </legend>
+        <label for=""> <input type="radio" name="size"value="p"> pequena </label>
+        <label for=""> <input type="radio" name="size"value="m"> media </label>
+        <label for=""> <input type="radio" name="size"value="g"> grande </label>
+        <label for=""> <input type="radio" name="size"value="f"> familia </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Borda</legend>
+        <input type="radio" name="borda_opc" onchange="checkFunction()" required="true" checked> Sim 
+        <input type="radio" id="sem_borda" name="borda_opc" onchange="checkFunction()"> Não
+        
+        <div id="Show_Hidden_bordas">
+          <fieldset>
+            <legend>Sabor</legend>
+              <input type="radio" id="a" name="bordas_sabor" value="queijo" required="true"> queijo 
+              <input type="radio" id="b" name="bordas_sabor" value="4q"> 4 queijos 
+              <input type="radio" id="c" name="bordas_sabor" value="chocolate"> chocolate 
+              <input type="radio" id="c" name="bordas_sabor" value="doce"> doce de leite 
+          </fieldset>          
+        </div>
+      </fieldset>
+      
+      <section>
+        <button onclick="enviado()"> PEDIR </button>
+        <button type="reset"> RESET </button>
+      </section>
+    </fieldset>
+    
+  </form>
+
+  <script>
+    function checkFunction(){
+      if (document.querySelector("#sem_borda").checked == true){
+        document.querySelector("#Show_Hidden_bordas").hidden = true;
+        document.querySelector("#a").required = false;
+        borda = 1;
+      }
+      else {
+        document.querySelector("#Show_Hidden_bordas").hidden = false
+        document.querySelector("#a").required = true;
+        borda = 0;
+      }
+    }
+    
+    function pegar_sabor(){
+      for (const val of document.querySelectorAll("input[name=sab]")){
+        if (val.checked) 
+          return val.value;
+      }  
+    }
+
+    function pegar_tamanho(){
+      for (const val of document.querySelectorAll("input[name=size]"))
+        if (val.checked) 
+          return val.value;
+    }
+
+    function pegar_borda(){
+      for (const val of document.querySelectorAll("input[name=bordas_sabor]"))
+        if (val.checked) {
+          return val.value;
+        }
+    }
+
+    function enviado(){
+      var sabor = pegar_sabor()
+      var tamanho = pegar_tamanho()
+      
+      if (borda == 0){
+        var sabor_borda = pegar_borda();
+        alert(sabor)
+      } 
+      else {
+        sabor_borda = null;
+        alert("aaa")
+      }
+
+      alert(`Sabor: ${sabor}\nTamanho:${tamanho}\nBordas:${sabor_borda}`)
+    }
+
+    var borda = 0; 
+
+  </script>
+</body>
+</html>
