@@ -59,7 +59,7 @@
       </fieldset>
       
       <section>
-        <button onclick="enviado()"> PEDIR </button>
+        <button id="but" type="button" onclick="enviado()"> PEDIR </button>
         <button type="reset"> RESET </button>
       </section>
     </fieldset>
@@ -106,18 +106,17 @@
       
       if (borda == 0){
         var sabor_borda = pegar_borda();
-        alert(sabor)
       } 
       else {
         sabor_borda = null;
-        alert("aaa")
       }
 
-      alert(`Sabor: ${sabor}\nTamanho:${tamanho}\nBordas:${sabor_borda}`)
+      arr.push({Sabor: sabor, Tamanho:tamanho, Bordas: sabor_borda})
     }
 
-    var borda = 0; 
 
+    var borda = 0; 
+    const arr = []
   </script>
 </body>
 </html>

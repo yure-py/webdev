@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    ver codigo
+
+    <script>
+        const carros = [{modelo: "Sandero", preco: 46500}, {modelo: "Palio", preco: 37800}]
+        
+        const obj = {
+            firstName: "in",
+            lastName: "out",
+            age: "put"
+        }
+
+        const arr = ["ana", "carlos", "sofia"]
+
+        // desestruturação
+        for (const carro of carros){
+            const {modelo, preco} = carro
+            console.log(`${modelo}\n ${preco}`)
+        }
+
+        var {firstName, lastName, age} = obj
+        var [a1, b2, c3] = arr
+
+        // rest
+        var [a,b,...c] = arr // resto faz uma array com tudo que "sobra"
+
+        //spread
+        var obj1 = {1: {key1:1, key2:2, key3:3}, 2:{keyx:"a", keya:"b"}};
+        var newobj = {
+            ...obj1, 3:{modelo: 1 , preco: 1} 
+        }
+
+        var arr1 = [1,2,3,4,5,6,7]
+        var newarr = [...arr1, 8,9,710]
+
+        
+
+    </script>
+
+</body>
+
+
+</html>
