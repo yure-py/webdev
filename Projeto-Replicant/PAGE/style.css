@@ -1,0 +1,44 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(0, 38, 51);
+    font-size: 15.2px;
+    margin: 0;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    width:100%;
+    margin:0 auto;
+} 
+
+/* HEADER SECTION */
+#headernavsection{
+    grid-column: span 2;
+    grid-template-columns: 20% 80%;
+}
+
+/*Logo header*/
+
+/* Navigation links */
+#divListLinks{
+}
+
+#divListLinks li {
+    list-style-type: none;
+    display: inline;
+}
+
+#divListLinks a {
+    color: white;
+    
+}
+
+
+
+
