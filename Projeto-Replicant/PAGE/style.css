@@ -26,19 +26,22 @@ body {
 /*Logo header*/
 
 /* Navigation links */
-#divListLinks{
+
+ul#divListLinks{
+    padding-left: 0;
+    margin: 0 0 0 0;
 }
 
-#divListLinks li {
+#divListLinks li, a{
     list-style-type: none;
     display: inline;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    margin-left: 3px ;
 }
 
 #divListLinks a {
-    color: white;
-    
 }
-
-
-
 
