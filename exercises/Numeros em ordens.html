@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Analisar lista de numeros</h1>
+    <hr>
+
+    <p>Numero <input> <button id="Add">Adicionar</button></p>
+    <button id="verify">Verificar ordem</button>
+    <button onclick="reset()">Reload</button>
+
+    <pre>
+        <p style="color: blue;"></p>
+    </pre>
+
+    <script>
+        const nums = [];
+
+        function reset(){
+            location.reload()
+        }
+
+        document.querySelector("#Add").addEventListener("click", (e) => {
+            let y = document.querySelector("input").value
+            let num = nums.push(Number(y))
+            document.querySelector("input").value = ""
+        })
+        
+        document.querySelector("#verify").addEventListener("click", (e) => {
+            if (nums.length > 0) {
+                for (let index = 0; index < nums.length - 1; index++) {
+                    if (!(nums[index] > nums[index + 1]))
+                        document.querySelector("pre > p").innerHTML = `<i> A lista esta em ordem crescente!`
+                }
+            } 
+            else {
+                alert("LISTA VAZIA!")
+            }
+        })
+
+    </script>
+</body>
+
+</html>

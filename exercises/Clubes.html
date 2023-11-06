@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Jogos Eliminatorios</h1>
+    <hr>
+
+    <form >
+        <p>Clube <input id="inText"> <button id="btAdicionar">Adicionar</button> </p>
+        <p>
+            <button id="btListar">Listar</button> <button id="btMontar">Montar Tabela</button>
+        </p>
+    </form>
+    <pre></pre>
+
+    <script>
+        const clubes = []
+
+        form = document.querySelector("form")
+        
+        form.btAdicionar.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            clubes.push(form.inText.value)
+            form.inText.value = ""
+        })
+
+        
+        form.btListar.addEventListener("click", (e) => {
+            e.preventDefault()
+            
+            let msg = `Lista de clubes\n${'-'.repeat(40)}\n`
+
+            msg += clubes.reduce((ac, el) => ac + `${el}\n`, "")
+
+            document.querySelector("pre").textContent = msg
+        })
+
+        form.btMontar.addEventListener("click", (e) => {
+            e.preventDefault()
+
+            if (clubes.length % 2 == 0){
+
+                // Shuffle
+                for (let i = clubes.length - 1; i > 0; i--) { 
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [clubes[i], clubes[j]] = [clubes[j], clubes[i]]; 
+                } 
+
+                var msg = "";
+                var size = (clubes.length/2);
+                for (let index = 0; index < size; index++) {
+                    let [c1,c2] = clubes.splice(0,2)
+                    msg += `${c1} x ${c2}\n`;
+                }
+
+                document.querySelector("pre").textContent = msg
+            }
+            else
+                alert("Elementos Impares!");
+            
+        })
+
+        function testando(){
+            for (let index = 0; index < 12; index++) {
+                clubes.push(index)                
+            }
+
+            
+        }
+
+    </script>
+</body>
+</html>

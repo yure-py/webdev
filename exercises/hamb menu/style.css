@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+}
+div#aa{
+    background-color: white;
+    height: 150px;
+    width: 150px;
+    text-align:center ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid red 7px;
+    border-radius: 100%;
+    background-color: beige;
+
+
+    box-shadow: 300px 10px 1px red;
+}
+
+div#b1{
+    width: 100%;
+    max-width: 1500px;
+    height: 150px;
+
+    background-color: white;
+
+    border: solid black 1px;
+
+    border-right: 30px darkred solid;
+
+    border-bottom: 10px solid darkred ;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -50px;
+}
+div#b2 {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 100%;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="border-bottom: inset ;">Programa email Institucional</h1>
+
+    <form>
+        <p>Funcionario <input id="inFunc"></p>
+        <button id="button">Gerar email!</button>
+    </form>
+    <h3></h3>
+    <script>
+        form = document.querySelector("form")
+
+
+        form.addEventListener("submit", (e) =>{
+            e.preventDefault()
+            form.inFunc.value = ""
+        })
+
+
+        form.button.addEventListener("click", () =>{
+            nome = form.inFunc.value.trim()
+            const nomes = nome.split(" ")
+            
+            let email = "";
+
+            for (let index = 0; index < nomes.length; index++) {
+                email += nomes[index].charAt(0)
+            }
+
+            email += "@empresa.com.br".
+
+            document.querySelector("h3").innerText = email.toLocaleLowerCase()
+            
+        })
+
+    </script>
+</body>
+</html>

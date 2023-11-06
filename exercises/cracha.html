@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Programa E-mail Institucional</h1>
+    <form>
+        <p>
+            Nome:
+            <input type="text" id="inFuncionario" autofocus required>
+        </p>
+        <input type="submit" id="GerarNome" value="Gerar Nome">
+
+        
+    </form>
+
+    <script>
+        form = document.querySelector("form")
+        string__ = form.inFuncionario.value
+
+        form.addEventListener("submit", (e) =>{
+            e.preventDefault()
+            //form.inFuncionario.value = ""
+        })
+        form.GerarNome.addEventListener("click", ()=>{
+            firstName = string__.substring(0, string__.indexOf(" "))
+            lastName = string__.substring(string__.lastIndexOf(" ")+1)
+
+            document.body.insertAdjacentHTML("beforeend", `<p> <strong>Nome</strong>: ${firstName} ${lastName} </>`)
+        })
+
+    </script>
+
+</body>
+</html>

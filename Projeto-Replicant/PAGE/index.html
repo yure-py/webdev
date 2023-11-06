@@ -9,12 +9,12 @@
 <body>
     <!--HEADER-->
     <header>
-        <nav id="headernavsection" class="grid">
+        <nav id="headerNav" class="grid">
             <a href="#" id="header_image" class="padding2x">
                 <img src="../Base_template/img/logo.svg">
             </a>
 
-            <ul id="divListLinks">
+            <ul id="ListLinks">
                 <li> <a href="#">HOME</a> </li>
                 <li> <a href="#">ABOUT</a> </li>
                 <li> <a href="#">SERVICES</a> </li>
@@ -25,58 +25,38 @@
     </header>
 
     <main>
-        <section>
-            <img src="#" alt="">
-        </section>
-        
-        <section>
-            <img src="#" alt="">
-            <img src="#" alt="">
-            <img src="#" alt="">
-            <img src="#" alt="">
+        <section id="slider">
+            <div class="slides">
+                <!-- Radio buttons -->
+                <input type="radio" id="radio1" name="rad">
+                <input type="radio" id="radio2" name="rad">
+                <input type="radio" id="radio3" name="rad">
+                <!-- Fim radio button -->
 
-            <aside>
-            </aside>
-        </section>
-        <section>
-            <h1>
-                Responsive Parallax Background
-            </h1>
-            <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-            </p>
-        </section>
-        <section>
-            <img src="#" alt="">
-            <div>
-                <h1>
-                    Nonummy nibh euismod tincidunt ut laoreet
-                    massa nec orci accusamus auctor aute
-                </h1>
-                <ul>
-                    <li>Sed diam nonummy nibh euismod tincidunt ut laoreet</li>
-                    <li>Dolore magna aliquam erat volutpat</li>
-                    <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</li>
-                    <li>Sed diam nonummy nibh euismod tincidunt ut laoreet</li>
-                    <li>Dolore magna aliquam erat volutpat</li>
-                </ul>
-            </div>            
+                <!-- Slider images -->
+                <div class="first"><img src="../Base_template/img/carousel-01.jpg"></div>
+                <div><img src="../Base_template/img/carousel-02.jpg"></div>
+                <div><img src="../Base_template/img/carousel-03.jpg"></div>
+                <!-- Fim sliders image -->
+
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                </div>
+            </div>
+
+            <div class="manual-navigation">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+            </div>
+            
         </section>
 
-        <section>
-            <h1>Top references</h1>
-            <img src="#" alt="">
-            <img src="#" alt="">
-            <img src="#" alt="">
-            <img src="#" alt="">
-        </section>
-
-        <section>
-
-        </section>
     </main>
-    <footer>
 
-    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
