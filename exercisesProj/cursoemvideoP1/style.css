@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+}
+
+body {
+    background-color: bisque;
+}
+
+/*CABEÇALHO*/
+header {
+    background-image: linear-gradient(180deg, #3DDC84, #063D1E);
+}
+
+#links {
+}
+#links li {
+    display: inline;
+}
+#links a {
+    text-decoration: none;
+    color: white;
+}

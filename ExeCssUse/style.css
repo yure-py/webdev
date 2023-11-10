@@ -1,0 +1,19 @@
+#card-conteiner {
+    background-color: blue;
+
+    border: 1px solid black;
+    border-radius: 10px;
+
+    max-width: 700px;
+    margin: auto;
+
+    padding: 20px;
+    box-shadow: 10px 10px red;
+}
+#card-box {
+    background-color: white;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+            height: 400px;
+            flex-direction: row;
+        }
+        .carousel{
+            width: 500px;
+            height: 400px;
+            display: flex;
+            border-
+        }
+
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="slides">
+          <img src="Base_template/img/img-01.jpg" alt="Imagem 1">
+          <img src="Base_template/img/img-04.jpg" alt="Imagem 2">
+          <img src="Base_template/img/img-05.jpg" alt="Imagem 3">
+        </div>
+    </div>
+    
+    <script>
+        document.querySelector(".carousel").addEventListener("click", function() {
+        this.style.cursor = "grab";
+        });
+
+        document.querySelector(".carousel").addEventListener("mousedown", function(event) {
+        this.startX = event.pageX;
+        });
+
+        document.querySelector(".carousel").addEventListener("mousemove", function(event) {
+        var deltaX = event.pageX - this.startX;
+        this.style.left = this.offsetLeft + deltaX + "px";
+        });
+
+        document.querySelector(".carousel").addEventListener("mouseup", function() {
+        this.style.cursor = "default";
+        });
+
+        document.querySelector(".carousel").addEventListener("touchstart", function(event) {
+        
+            this.startX = event.touches[0].pageX;
+        });
+
+        document.querySelector(".carousel").addEventListener("touchmove", function(event) {
+        var deltaX = event.touches[0].pageX - this.startX;
+        this.style.left = this.offsetLeft + deltaX + "px";
+        });
+    </script>
+
+</body>
+</html>
