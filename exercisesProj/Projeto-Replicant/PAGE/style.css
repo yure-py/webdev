@@ -75,48 +75,44 @@ ul#ListLinks a:hover{
 
                     /* CAROUSEL */
 
+                    /* image */
 .slides {
     display: flex;
-    overflow: hidden;
 }
 
-.slides img{
-    width: 1520px;
+div[style]{
+    width: 1523px;
     height: 532px;
-    object-fit: cover;
-    object-position: top;
+    flex-shrink: 0;
+    background-position: top;
+    background-size: cover;
 }
 
-                    /* BUTTONS */
+/* Buttons */
 .slides input {
     display: none;
 }
-
-div.manual-navigation{
-    width: 150px;
-    margin-top: -40px;
+.manual-navigation {
     display: flex;
-    justify-content: center;
     gap: 10px;
+    margin: -40px 0 0 20px;
+}
+.manual-navigation label {
+    width: 30px;
+    height: 30px;
+    border: solid white 1px;
+    transition: 0.5s;
 }
 
-label.manual-btn{
-    border: 2px solid white;
-    padding: 10px;
-    cursor: pointer;
+/* Passar imagem */
+.first {
+    margin-left: -200% ;
 }
 
-                /*Image transition button */
+#radio1:checked ~ div.first {
+    margin-left: 0px;
+}
 
-#radio1:checked ~ .first{
-    margin-left: 0%;
-    transition: 1s;
-} 
-#radio2:checked ~ .first{
-    margin-left: -100%;
-    transition: 1s;
-} 
-#radio3:checked ~ .first{
-    margin-left: -200%;
-    transition: 1s;
-} 
+#radio2:checked ~ div.first {
+    margin-left: -1000px;
+}
